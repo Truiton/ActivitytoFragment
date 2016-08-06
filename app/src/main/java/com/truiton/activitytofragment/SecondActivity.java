@@ -35,13 +35,14 @@ public class SecondActivity extends AppCompatActivity implements IFragmentToActi
         String data = app.getData();
         String img_url = app.getData();
         txtVw_msg.setText(data);
-        txtVw_msg.setTextSize(20);
-        txtVw_msg.setTypeface(Typeface.SANS_SERIF,Typeface.BOLD);
+        txtVw_msg.setTextSize(10);
+        txtVw_msg.setTypeface(Typeface.SANS_SERIF,Typeface.ITALIC);
 
         //txtVw_msg.setTextColor(Color.parseColor("#FF57FC7E"));
         imgVw_youtube_thumbnail=(ImageView)findViewById(R.id.imgVw_youtube_thumbnail);
-        //Glide.with(this).load(img_url).centerCrop().placeholder(R.drawable.iphone_7_img_2).diskCacheStrategy(DiskCacheStrategy.ALL).into(imgVw_youtube_thumbnail);
-        Picasso.with(this).load(img_url).fit().centerCrop().placeholder(R.drawable.iphone_7_img_2).into(imgVw_youtube_thumbnail);
+        Glide.with(this).load(img_url).centerCrop()
+                .crossFade().placeholder(R.drawable.iphone_7_img_2).diskCacheStrategy(DiskCacheStrategy.ALL).into(imgVw_youtube_thumbnail);
+        //Picasso.with(this).load(img_url).fit().centerCrop().placeholder(R.drawable.iphone_7_img_2).into(imgVw_youtube_thumbnail);
     }
     @Override
     public void showToast(String msg) {
