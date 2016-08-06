@@ -10,11 +10,14 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.utils.MyApplication;
+
 public class TabFragment1 extends Fragment implements View.OnClickListener {
     private IFragmentToActivity mCallback;
     private Button btnFtoA;
     private Button btnFtoF;
     private Button btnFto2A;
+   // MyApplication app;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -25,6 +28,9 @@ public class TabFragment1 extends Fragment implements View.OnClickListener {
         btnFtoA.setOnClickListener(this);
         btnFtoF.setOnClickListener(this);
         btnFto2A.setOnClickListener(this);
+
+
+
         return view;
     }
 
@@ -62,7 +68,10 @@ public class TabFragment1 extends Fragment implements View.OnClickListener {
                 break;
             case R.id.button3:
                 mCallback.showToast("Hello  Activity 2,from Fragment 1");
-                Intent io = new Intent(getActivity(),SecondActivity.class);
+                /*app = (MyApplication) getActivity().getApplicationContext();
+                app.setData("Hello  Activity 2,from Fragment 1");
+                */
+                Intent io = new Intent(getActivity().getApplicationContext(),SecondActivity.class);
                 startActivity(io);
                 break;
         }
