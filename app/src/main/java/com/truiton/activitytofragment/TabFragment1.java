@@ -10,7 +10,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.Toast;
 
-import com.utils.MyApplication;
+import com.utils.IFragmentToActivity;
 
 public class TabFragment1 extends Fragment implements View.OnClickListener {
     private IFragmentToActivity mCallback;

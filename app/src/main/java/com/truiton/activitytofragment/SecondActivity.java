@@ -4,15 +4,15 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
-import android.widget.Toast;
 
+import com.utils.IFragmentToActivity;
 import com.utils.MyApplication;
 
 /**
  * Created by apple1 on 06/08/16.
  */
 
-public class SecondActivity extends AppCompatActivity implements IFragmentToActivity  {
+public class SecondActivity extends AppCompatActivity implements IFragmentToActivity {
 /*This is the Link to achieve  Values from fragments into activity*/
     /*http://stackoverflow.com/questions/4878159/whats-the-best-way-to-share-data-between-activities*/
     private TextView txtVw_msg;

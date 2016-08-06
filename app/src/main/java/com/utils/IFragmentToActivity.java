@@ -1,4 +1,4 @@
-package com.truiton.activitytofragment;
+package com.utils;
 
 public interface IFragmentToActivity {
     void showToast(String msg);
