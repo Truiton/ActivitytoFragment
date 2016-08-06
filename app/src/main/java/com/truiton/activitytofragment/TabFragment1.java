@@ -17,6 +17,9 @@ public class TabFragment1 extends Fragment implements View.OnClickListener {
     private Button btnFtoA;
     private Button btnFtoF;
     private Button btnFto2A;
+
+    String img_url =
+            "https://www.google.co.nz/imgres?imgurl=https%3A%2F%2Fcloudpix.co%2Fimages%2Fhd-wallpapers-tv-shows%2Farrow-tv-show-hd-wallpapers-hd-wallpaper-movies-photo-arrow-hd-wallpaper-86e212b094c8babb094e2d140b00a364-large-1331237.jpg&imgrefurl=https%3A%2F%2Fcloudpix.co%2Farrow-tv-show-hd-wallpapers-hd-wallpaper-movies-photo-arrow-hd-wallpaper-hd-wallpapers-tv-shows-1331237.html&docid=WE8p7fb8Q4XF2M&tbnid=6ImKRlhyaMFTfM%3A&w=1440&h=900&noj=1&bih=914&biw=1883&ved=0ahUKEwiy8-GX6qzOAhWDq48KHWaTBxsQMwhSKCYwJg&iact=mrc&uact=8";
    // MyApplication app;
 
     @Override
@@ -67,7 +70,8 @@ public class TabFragment1 extends Fragment implements View.OnClickListener {
                 mCallback.communicateToFragment2();
                 break;
             case R.id.button3:
-                mCallback.showToast("Hello  Activity 2,from Fragment 1");
+                //mCallback.showToast("Hello  Activity 2,from Fragment 1");
+                mCallback.showToast(img_url);
                 /*app = (MyApplication) getActivity().getApplicationContext();
                 app.setData("Hello  Activity 2,from Fragment 1");
                 */

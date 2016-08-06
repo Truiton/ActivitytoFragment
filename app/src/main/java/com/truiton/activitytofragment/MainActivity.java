@@ -80,7 +80,7 @@ public class MainActivity extends AppCompatActivity implements IFragmentToActivi
     public void showToast(String msg) {
         //String data = DataHolder.getInstance().getData();
         app = (MyApplication)getApplication();
-        app.setData("Hello  Activity 2,from Fragment 1");
+        app.setData(msg);
         Toast.makeText(this, "MainActivity:"+msg, Toast.LENGTH_LONG).show();
     }
 
