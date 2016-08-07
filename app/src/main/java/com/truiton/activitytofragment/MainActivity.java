@@ -11,12 +11,18 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import com.utils.IFragmentToActivity;
+import com.utils.MyApplication;
+
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity implements IFragmentToActivity {
     private final String LOG_TAG = "MainActivity";
     private PagerAdapter adapter;
     private TabLayout tabLayout;
+    private IFragmentToActivity mCallback;
+    MyApplication app;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +30,7 @@ public class MainActivity extends AppCompatActivity implements IFragmentToActivi
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
 
         ArrayList<String> tabs = new ArrayList<>();
         tabs.add("Tab 1");
@@ -35,6 +42,7 @@ public class MainActivity extends AppCompatActivity implements IFragmentToActivi
         adapter = new PagerAdapter(getSupportFragmentManager(), tabs);
         viewPager.setAdapter(adapter);
         tabLayout.setupWithViewPager(viewPager);
+
     }
 
     @Override
@@ -42,6 +50,9 @@ public class MainActivity extends AppCompatActivity implements IFragmentToActivi
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
+
+
+
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -67,7 +78,10 @@ public class MainActivity extends AppCompatActivity implements IFragmentToActivi
 
     @Override
     public void showToast(String msg) {
-        Toast.makeText(this, msg, Toast.LENGTH_LONG).show();
+        //String data = DataHolder.getInstance().getData();
+        app = (MyApplication)getApplication();
+        app.setData(msg);
+        Toast.makeText(this, "MainActivity:"+msg, Toast.LENGTH_LONG).show();
     }
 
     @Override
